@@ -16,7 +16,20 @@ header {
 header > img {
   width: 55px;
 }
-
+header select {
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: green;
+  text-transform: uppercase;
+  background-color: #1e2d3b;
+}
+select option {
+  border-radius: 5px;
+  font-weight: bold;
+}
 .albums {
   display: flex;
   flex-wrap: wrap;

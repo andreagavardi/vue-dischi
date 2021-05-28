@@ -9,19 +9,35 @@ const app = new Vue ({
     data:{ 
         url:"https://flynn.boolean.careers/exercises/api/array/music",
         albums:"",
-        albumsOrdered:[]
-        
+        albumsOrdered:[],
+        albumGenre:[],
+        genreSelected:"All"
     },
-    methods:{ },
+    methods:{ 
+
+        /* Bonus 1 */
+       selectGenre(event){
+            this.genreSelected=event.target.value;
+            
+        }
+    },
     mounted(){
         
         axios.get(this.url)
         .then(resp =>{
             this.albums=resp.data.response
-             this.albums.sort(compare)   
+            this.albums.sort(compare)
+            this.albums.forEach(album => {
+                if(this.albumGenre.includes(album.genre)){
+
+                }else{
+                    this.albumGenre.push(album.genre)
+                }
+            }); 
+           
         });
 
-
+        
         /* Bonus ordinare gli album per data di uscita */
         function compare( a, b ) {
             if ( a.year < b.year ){

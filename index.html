@@ -18,10 +18,15 @@
 
         <header>
             <img src="./assets/img/logo-small.png" alt="Logo spotify">
+            <label for="albums-genre">Seleziona un genere</label>
+            <select name="albums-genre" id="albums" @change="selectGenre">
+                <option value="All" class="genre">All</option>
+                <option :value="genre" class="genre" v-for="genre in albumGenre">{{genre}}</option>
+            </select>
         </header>
 
         <div class="albums" >
-            <div class="album" v-for="album in albums">
+            <div class="album" v-for="album in albums" v-if="genreSelected == album.genre || genreSelected == 'All'">
                 <img :src="album.poster" alt="">
                 <div class="details">
                     <h2>{{album.title}}</h2>
