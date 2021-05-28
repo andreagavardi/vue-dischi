@@ -16,13 +16,18 @@ header {
 header > img {
   width: 55px;
 }
+header label {
+  color: #68d961;
+  font-weight: bold;
+  margin-left: 2rem;
+}
 header select {
   padding: 0.5rem 1rem;
   margin-left: 2rem;
   border-radius: 10px;
   font-size: 1rem;
   font-weight: 600;
-  color: green;
+  color: #68d961;
   text-transform: uppercase;
   background-color: #1e2d3b;
 }
