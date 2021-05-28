@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dischi</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico">
+    <!-- style CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="app">
 
+        <header>
+            <img src="./assets/img/logo-small.png" alt="Logo spotify">
+        </header>
+
+        <div class="albums" >
+            <div class="album" v-for="album in albums">
+                <img :src="album.poster" alt="">
+                <div class="details">
+                    <h2>{{album.title}}</h2>
+                    <div>{{album.author}} <br> {{album.year}}</div>
+                </div>
+            </div>
+        </div>
     </div>
 
      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
