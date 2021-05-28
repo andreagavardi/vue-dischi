@@ -9,15 +9,30 @@ const app = new Vue ({
     data:{ 
         url:"https://flynn.boolean.careers/exercises/api/array/music",
         albums:"",
-        albumsDate:""
+        albumsOrdered:[]
+        
     },
     methods:{ },
     mounted(){
-
+        
         axios.get(this.url)
         .then(resp =>{
             this.albums=resp.data.response
-            
-        })
+             this.albums.sort(compare)   
+        });
+
+
+        /* Bonus ordinare gli album per data di uscita */
+        function compare( a, b ) {
+            if ( a.year < b.year ){
+              return -1;
+            }
+            if ( a.year > b.year ){
+              return 1;
+            }
+            return 0;
+        };
+       
+        
     }
 }) 
