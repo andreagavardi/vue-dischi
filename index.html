@@ -19,7 +19,7 @@
         <header>
             <img src="./assets/img/logo-small.png" alt="Logo spotify">
             <label for="albums-genre">Seleziona un genere</label>
-            <select name="albums-genre" id="albums" @change="selectGenre">
+            <select name="albums-genre" id="albums" v-model="genreSelected" > <!-- @change="selectGenre" metodo di selezione tramite funzione -->
                 <option value="All" class="genre">All</option>
                 <option :value="genre" class="genre" v-for="genre in albumGenre">{{genre}}</option>
             </select>

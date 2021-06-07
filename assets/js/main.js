@@ -15,11 +15,11 @@ const app = new Vue ({
     },
     methods:{ 
 
-        /* Bonus 1 */
-       selectGenre(event){
+        /* Bonus 1 senza il v-model sull'elemento <select>*/
+       /* selectGenre(event){
             this.genreSelected=event.target.value;
             
-        }
+        } */
     },
     mounted(){
         
